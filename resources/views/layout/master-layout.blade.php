@@ -22,5 +22,4 @@
 @yield('js')
 @include('layout.scripts')
 </body>
-
 </html>
