@@ -64,6 +64,9 @@
 		============================================ -->
     <link rel="stylesheet" href="/asset/css/calendar/fullcalendar.min.css">
     <link rel="stylesheet" href="/asset/css/calendar/fullcalendar.print.min.css">
+    <!-- datapicker CSS
+       ============================================ -->
+    <link rel="stylesheet" href="/asset/css/datapicker/datepicker3.css">
     <!-- modals CSS
 		============================================ -->
     <link rel="stylesheet" href="/asset/css/modals.css">

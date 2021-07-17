@@ -51,6 +51,10 @@
        ============================================ -->
 <script src="/asset/js/chart/jquery.peity.min.js"></script>
 <script src="/asset/js/peity/peity-active.js"></script>
+<!-- datapicker JS
+		============================================ -->
+<script src="/asset/js/datapicker/bootstrap-datepicker.js"></script>
+<script src="/asset/js/datapicker/datepicker-active.js"></script>
 <!-- metisMenu JS
     ============================================ -->
 <script src="/asset/js/metisMenu/metisMenu.min.js"></script>

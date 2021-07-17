@@ -29,71 +29,6 @@
                                                 <div class="form-group-inner">
                                                     <div class="row">
                                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                            <label class="login2 pull-right pull-right-pro">Email</label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                            <input type="email" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                            <label class="login2 pull-right pull-right-pro">Password</label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                            <input type="password" class="form-control" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                            <label class="login2 pull-right pull-right-pro">Placeholder</label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                            <input type="text" class="form-control" placeholder="Placeholder" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                                                            <label class="login2 pull-right pull-right-pro">Disabled</label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-                                                            <input type="text" disabled class="form-control" placeholder="Disabled input here..." />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                            <label class="login2 pull-right pull-right-pro"><span class="basic-ds-n">Bootstrap</span> Default Checkbox</label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                                            <div class="bt-df-checkbox">
-                                                                <input class="pull-left" type="checkbox">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-                                                            <label class="login2 pull-right pull-right-pro"><span class="basic-ds-n">Bootstrap</span> Default Radio</label>
-                                                        </div>
-                                                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
-                                                            <div class="bt-df-checkbox">
-                                                                <input class="pull-left radio-checked" type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios">
-                                                                <input class="pull-left" type="radio" value="option2" id="optionsRadios2" name="optionsRadios">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
                                                             <label class="login2 pull-right pull-right-pro">Select</label>
                                                         </div>
                                                         <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
@@ -108,7 +43,6 @@
                                                         </div>
                                                     </div>
                                                 </div>
-
                                                 <div class="form-group-inner">
                                                     <div class="row">
                                                         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">

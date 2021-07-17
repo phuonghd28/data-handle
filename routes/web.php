@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataHandleController;
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\LayoutController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,3 +26,10 @@ Route::post('/data-handle/form',[DataHandleController::class,'processForm']);
 Route::get('',[LayoutController::class,'masterLayout']);
 Route::get('/form',[LayoutController::class,'create']);
 Route::get('/list',[LayoutController::class,'list']);
+
+// CRUD Events
+Route::get('/admin/events/create',[EventController::class,'create']);
+Route::get('/admin/events/list',[EventController::class,'list']);
+Route::post('/admin/events/create',[EventController::class,'store']);
+
+
