@@ -12,15 +12,27 @@
                         </div>
                         <div class="sparkline13-graph">
                             <div class="datatable-dashv1-list custom-datatable-overright">
-                                <div id="toolbar">
-                                    <select class="form-control dt-tb">
-                                        <option value="">Export Basic</option>
-                                        <option value="all">Export All</option>
-                                        <option value="selected">Export Selected</option>
-                                    </select>
+                                <div class="breadcome-heading">
+                                    <form id="form-filter">
+                                        <div class="col-md-3 form-group">
+                                            <input type="text" placeholder="Search..." class="search-int form-control" id="search" name="search">
+                                        </div>
+                                        <div class="form-group col-md-9">
+                                            <select class="form-control" id="status" name="status">
+                                                <option value="" selected>All Status</option>
+                                               @foreach(\App\Enums\EventStatus::getValues() as $type)
+                                                    <option value="{{$type}}" {{$type == $status ? 'selected' : ''}}>{{\App\Enums\EventStatus::getDescription($type)}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </form>
+
                                 </div>
-                                <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+
+
+{{--                     data-search="true",data-pagination="true",data-show-pagination-switch="true",data-show-refresh="true", data-show-toggle="true",data-show-export="true",data-show-columns="true" --}}
+                                <table id="table" data-toggle="table" data-key-events="true" data-resizable="true" data-cookie="true"
+                                       data-cookie-id-table="saveId"  data-click-to-select="true" data-toolbar="#toolbar">
                                     <thead>
                                     <tr>
                                         <th>ID</th>
@@ -57,8 +69,29 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        @include('paginate.template',['list' => $list])
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+@endsection
+@section('js')
+    <script>
+        const form = document.getElementById('form-filter');
+        const search = document.getElementById('search');
+        const status = document.getElementById('status');
+
+        search.onkeypress = function (event){
+            if(event.key == 'Enter'){
+                form.submit();
+            }
+        }
+        if(status){
+            status.onchange = function (){
+                form.submit();
+            }
+        }
+    </script>
 @endsection

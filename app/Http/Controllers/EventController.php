@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\EventRequest;
 use App\Models\Event;
 use Illuminate\Http\Request;
 
@@ -13,22 +14,28 @@ class EventController extends Controller
         ]);
     }
 
-    public function list(){
-        $events = Event::all();
+    public function list(Request $request){
+        $queryBuilder = Event::query();
+        $search = $request->query('search');
+        $status = $request->query('status');
+        if($search && strlen($search) > 0){
+            $queryBuilder = $queryBuilder->where('eventName','like','%'.$search.'%')
+                ->orWhere('bandNames','like','%'.$search.'%')
+            ->orWhere('portfolio','like','%'.$search.'%');
+        }
+        if($status){
+            $queryBuilder = $queryBuilder->where('status',$status);
+        }
+        $events = $queryBuilder->paginate(10)->appends(['search' => $search, 'status' => $status]);
+
         return view('events/list',[
             'list' => $events,
+            'status' => $status
         ]);
     }
-    public function store(Request $request){
+    public function store(EventRequest $request){
         $events = new Event();
-//        $events->eventName = $request->get('eventName');
-//        $events->bandNames = $request->get('bandNames');
-//        $events->startDate = $request->get('startDate');
-//        $events->endDate = $request->get('endDate');
-//        $events->portfolio = $request->get('portfolio');
-//        $events->ticketPrice = $request->get('ticketPrice');
-//        $events->status = $request->get('status');
-        $events->fill($request->all());
+        $events->fill($request->validated());
         $events->save();
         return redirect('/admin/events/list');
     }
@@ -41,13 +48,6 @@ class EventController extends Controller
 
     public function save(Request $request,$id){
         $detailEvent = Event::find($id);
-//        $detailEvent->eventName = $request->get('eventName');
-//        $detailEvent->bandNames = $request->get('bandNames');
-//        $detailEvent->startDate = $request->get('startDate');
-//        $detailEvent->endDate = $request->get('endDate');
-//        $detailEvent->portfolio = $request->get('portfolio');
-//        $detailEvent->ticketPrice = $request->get('ticketPrice');
-//        $detailEvent->status = $request->get('status');
         $detailEvent->update($request->all());
         $detailEvent->save();
         return redirect('/admin/events/list');
